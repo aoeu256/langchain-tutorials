@@ -1,7 +1,4 @@
-To add the message "Hello world!" to Google Keep using Python, you will need to use the Google Keep API. Here is an example program that demonstrates how to do this:
-
-```
-import google.auth
+import google.auth, pickle
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -30,6 +27,3 @@ created_note = service.notes().create(body=note).execute()
 
 # Print the ID of the newly created note
 print("Note created with ID:", created_note['name'][5:])
-```
-
-Note that this program requires you to have OAuth2 credentials set up for your Google account, which can be obtained through the Google Cloud Console. Additionally, you will need to have the `google-auth`, `google-auth-oauthlib`, `google-auth-httplib2`, and `google-api-python-client` Python modules installed.
